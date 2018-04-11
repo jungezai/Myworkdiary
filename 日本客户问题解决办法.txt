@@ -1,0 +1,31 @@
+
+ElderSensRouter在日本使用时，ntp服务不可用，执行ntp、更换ntp服务器都不行。
+目前的方法是使用htpdate定时执行命令校正时间。
+
+1.切换root用户，安装htpdate。
+sudo apt-get install htpdate
+
+
+2.在usr/bin/目录下新建脚本
+vi checkdate.sh
+内容：
+----------------------------------
+#!/bin/sh
+htpdate -t -s www.linux.org www.freebsd.org
+----------------------------------
+
+
+3.设置定时执行脚本
+sudo crontab -e
+
+添加内容：
+----------------------------------
+01 * * * * /usr/bin/checkdate.sh
+----------------------------------
+
+
+
+
+
+
+
