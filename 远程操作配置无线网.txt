@@ -1,0 +1,10 @@
+准备：
+网线
+pc（需要连接有线/无线网络）
+raspberrypi
+pc安装teamviewer注册，安装putty/SSH Secure Shell Client
+
+步骤：
+1.pc开启共享网络，raspberrypi有线连接pc，ping查看地址。
+2.打开ssh软件连接raspberrypi，命令行配置无线网络，重启。
+3.pc；连接无线网络，ping出地址（没有则连不上），ssh连接查看log。
